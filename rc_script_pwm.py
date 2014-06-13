@@ -17,7 +17,7 @@ DIR_STOP = 0
 DIR_FW = 1
 DIR_BW = 2
 
-PWM_WIDTH = 1500
+PWM_WIDTH = 1800
 
 # Called by WebIOPi at script loading
 def setup():
@@ -42,25 +42,25 @@ def destroy():
 # A macro without args which return nothing
 @webiopi.macro
 def MoveLeft():
-    Stop()
+    #Stop()
     LeftMotor(DIR_STOP)
     RightMotor(DIR_FW)
 
 @webiopi.macro
 def MoveRight():
-    Stop()
+    #Stop()
     RightMotor(DIR_STOP)
     LeftMotor(DIR_FW)
 
 @webiopi.macro
 def MoveForward():
-    Stop()
+    #Stop()
     LeftMotor(DIR_FW)
     RightMotor(DIR_FW)
 
 @webiopi.macro
 def MoveBackward():
-    Stop()
+    #Stop()
     LeftMotor(DIR_BW)
     RightMotor(DIR_BW)
 
@@ -71,7 +71,7 @@ def Stop():
     PWM.clear_channel_gpio(0, M1_B)
     PWM.clear_channel_gpio(0, M2_A)
     PWM.clear_channel_gpio(0, M2_B)
-    webiopi.sleep(0.1)
+    #webiopi.sleep(0.1)
 
 def LeftMotor(dir):
     if dir == DIR_FW:
