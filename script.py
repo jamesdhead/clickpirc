@@ -9,10 +9,10 @@ webiopi.setDebug()
 GPIO = webiopi.GPIO
 
 # Two LB1630
-IC1A = 24
-IC1B = 25
-IC2A = 8
-IC2B = 7
+IC1A = 4
+IC1B = 17
+IC2A = 22
+IC2B = 27
 
 # Called by WebIOPi at script loading
 def setup():
